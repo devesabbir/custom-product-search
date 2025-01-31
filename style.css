@@ -1,78 +1,87 @@
-/* Inline Search Form Container */
-.inline-search-form {
-  max-width: 100%;
+/* Amazon-like Search Form Container */
+.amazon-like-search-form {
+  max-width: 800px;
   margin: 20px auto;
   padding: 10px;
 }
 
-.inline-search-container {
+.search-container {
   display: flex;
-  align-items: center;
-  gap: 10px; /* Space between fields */
-}
-
-/* Category Select Container (30% width) */
-.inline-search-field.category-field {
-  flex: 0 0 30%; /* Flex-grow, Flex-shrink, Flex-basis */
-  max-width: 30%;
-}
-
-/* Input Field Container (70% width) */
-.inline-search-field.input-field {
-  flex: 0 0 70%; /* Flex-grow, Flex-shrink, Flex-basis */
-  max-width: 70%;
-}
-
-/* Button Container (auto width) */
-.inline-search-field.button-field {
-  flex: 0 0 auto; /* Let the button take its natural width */
-}
-
-.inline-search-field {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* Space between label and input */
-}
-
-.inline-search-field label {
-  margin: 0;
-  font-weight: bold;
-  white-space: nowrap; /* Prevent label from wrapping */
-}
-
-.inline-search-field select,
-.inline-search-field input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
+  align-items: stretch; /* Ensure all elements have the same height */
+  border: 2px solid #ff9900; /* Amazon's orange border */
   border-radius: 4px;
+  overflow: hidden; /* Prevent inner elements from breaking the border radius */
 }
 
-.inline-search-field button {
-  padding: 8px 20px;
-  background: #0073aa;
-  color: #fff;
+/* Category Dropdown */
+.category-dropdown {
+  flex: 0 0 auto; /* Do not grow or shrink */
+  background: #f3f3f3; /* Light gray background */
+  border-right: 1px solid #ddd; /* Divider between dropdown and input */
+}
+
+.category-dropdown select {
+  height: 100%;
+  padding: 8px 12px;
   border: none;
-  border-radius: 4px;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none; /* Remove focus outline */
   cursor: pointer;
-  white-space: nowrap; /* Prevent button text from wrapping */
 }
 
-.inline-search-field button:hover {
-  background: #005177;
+/* Search Input */
+.search-input-wrapper {
+  flex: 1; /* Take up remaining space */
+}
+
+.search-input-wrapper input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 8px 12px;
+  border: none;
+  font-size: 14px;
+  outline: none; /* Remove focus outline */
+}
+
+/* Search Button */
+.search-button {
+  flex: 0 0 auto; /* Do not grow or shrink */
+  background: #ff9900; /* Amazon's orange color */
+}
+
+.search-button button {
+  height: 100%;
+  padding: 0 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button button i {
+  color: #333; /* Icon color */
+  font-size: 18px;
+}
+
+.search-button button:hover {
+  background: #e68a00; /* Darker orange on hover */
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
-  .inline-search-container {
-    flex-direction: column;
-    gap: 10px;
+  .category-dropdown {
+    flex: 0 0 120px; /* Smaller width for dropdown on small screens */
   }
 
-  .inline-search-field.category-field,
-  .inline-search-field.input-field {
-    flex: 0 0 100%; /* Full width on small screens */
-    max-width: 100%;
+  .category-dropdown select {
+    padding: 8px; /* Smaller padding */
+  }
+
+  .search-button button {
+    padding: 0 15px; /* Smaller padding */
   }
 }
