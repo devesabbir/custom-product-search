@@ -1,0 +1,78 @@
+/* Inline Search Form Container */
+.inline-search-form {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.inline-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between fields */
+}
+
+/* Category Select Container (30% width) */
+.inline-search-field.category-field {
+  flex: 0 0 30%; /* Flex-grow, Flex-shrink, Flex-basis */
+  max-width: 30%;
+}
+
+/* Input Field Container (70% width) */
+.inline-search-field.input-field {
+  flex: 0 0 70%; /* Flex-grow, Flex-shrink, Flex-basis */
+  max-width: 70%;
+}
+
+/* Button Container (auto width) */
+.inline-search-field.button-field {
+  flex: 0 0 auto; /* Let the button take its natural width */
+}
+
+.inline-search-field {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between label and input */
+}
+
+.inline-search-field label {
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
+.inline-search-field select,
+.inline-search-field input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.inline-search-field button {
+  padding: 8px 20px;
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.inline-search-field button:hover {
+  background: #005177;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  .inline-search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inline-search-field.category-field,
+  .inline-search-field.input-field {
+    flex: 0 0 100%; /* Full width on small screens */
+    max-width: 100%;
+  }
+}
